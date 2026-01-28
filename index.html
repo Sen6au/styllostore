@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>StylloStore</title>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+  <h1>🛍 StylloStore</h1>
+  <p>Каталог товаров под заказ</p>
+
+  <div>
+    <h3>Футболка Oversize</h3>
+    <p>Цена: по запросу</p>
+    <button onclick="order('Футболка Oversize')">Заказать</button>
+  </div>
+
+  <div>
+    <h3>Кроссовки</h3>
+    <p>Цена: по запросу</p>
+    <button onclick="order('Кроссовки')">Заказать</button>
+  </div>
+
+  <script>
+    let tg = window.Telegram.WebApp;
+    tg.expand();
+
+    function order(product) {
+      tg.sendData(product);
+      alert('Заявка отправлена: ' + product);
+    }
+  </script>
+</body>
+</html>
